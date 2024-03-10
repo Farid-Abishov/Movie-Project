@@ -6,6 +6,10 @@ const urlELement=document.querySelector("#url");
 //UI objectini baslatma
 const ui=new UI();
 
+
+//Storage Objecti yaratma
+const storage=new Storage();
+
 //Download all event
 eventListeners();
 
@@ -22,9 +26,8 @@ function addFilm(e){
         //hata
     }
     else{
-        //yeni film yaratmaq
-        const newFilm=new Film(title,director,url);
-
+        const newFilm=new Film(title,director,url); //yeni film yaratmaq
+        storage.addFilmtoStorage(newFilm); //Storage'a film add elemek
         ui.addFilmToUI(newFilm);
     }
     
